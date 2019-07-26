@@ -29,6 +29,7 @@ local gameobject_class={
 local gameobject = {
 	--数组部分
 	---class
+	---@type lstg.Class
 	{},
 	---id
 	0;
@@ -38,6 +39,7 @@ local gameobject = {
 	---状态，可以为"normal"、"kill"、"del"，分别代表正常状态、被kill、被del
 	status="normal",
 	---class，实际上返回的就是数组部分的第二项，也就是类型为lstg.Class的表
+	---@type lstg.Class
 	class={},
 	--========user========
 	---计数器，会每帧自增
@@ -87,6 +89,7 @@ local gameobject = {
 	vscale=1,
 	---赋值为nil时将会释放绑定在对象上的资源
 	img="unkown",
+	--========.render========
 	---渲染时使用的混合模式
 	_blend="",
 	---顶点色
