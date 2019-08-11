@@ -168,8 +168,8 @@ function bentlaser:SampleByTime(time)
 end
 
 ---根据一个对象表更新曲线激光的位置
----@param units lstg.GameObject[]|table[] @对象组，可以是带有x、y成员的table，也可以是lstg.GameObject
----@param length number @曲线激光的长度（最大节点数量），整数，不能小于1，且曲线激光最大节点数量为512
+---@param units lstg.GameObject[]|table[] @对象组，可以是带有x、y成员的table，也可以是lstg.GameObject，最大数量不超过512
+---@param length number @第一个参数里面含有的对象数
 ---@param width number @宽度，不是半宽
 ---@param index number @索引初始位置
 ---@param revert boolean @反向索引
