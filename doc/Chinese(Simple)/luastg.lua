@@ -14,3 +14,7 @@ lstg = require("lstg")--没有实际require
 ---文件管理，单实例
 ---@type lstg.FileManager
 lstg.FileManager = require("filemanager")--没有实际require
+
+---XInput支持，单实例
+---@type lstg.XInputManager
+lstg.XInputManager = require("xinputmanager")--没有实际require
