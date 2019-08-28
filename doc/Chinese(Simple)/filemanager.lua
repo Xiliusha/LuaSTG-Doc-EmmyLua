@@ -103,10 +103,17 @@ function m.GetArchive(archivename)
     return zip
 end
 
----判断指定的文件是否存在，除了判断文件系统中的文件外，还判断已加载的压缩包中的文件
+---判断指定的文件是否存在，只判断文件系统中的文件
 ---@param filepath string @文件
 ---@return boolean
 function m.FileExist(filepath)
+    return true
+end
+
+---判断指定的文件是否存在，除了判断文件系统中的文件外，还判断已加载的压缩包中的文件
+---@param filepath string @文件
+---@return boolean
+function m.FileExistEx(filepath)
     return true
 end
 
