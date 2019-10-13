@@ -7,20 +7,52 @@
 ----------------------------------------
 ---lstg.Color
 
----@class lstg.Color @fcyColor的lua包装
-local color={}
+---@class lstg.Color
+local color = {
+	---alpha channel [[0~255]]
+	a = 0,
+	---red channel [[0~255]]
+	r = 0,
+	---green channel [[0~255]]
+	g = 0,
+	---blue channel [[0~255]]
+	b = 0,
+	---32bit color [[0x00000000~0xFFFFFFFF]]
+	argb = 0,
+	---hue [[0~360]]
+	h = 0.0,
+	---saturation [[0~100]]
+	s = 0.0,
+	---value [[0~100]]
+	v = 0.0,
+}
 
----返回颜色的4个分量
----@return number,number,number,number @alpha,red,green,blue
+---返回颜色的4个分量，或者通过4个分量设置颜色
+---@overload fun():number, number, number, number
+---@overload fun(a:number, r:number, g:number, b:number)
+---@return number, number, number, number
 function color:ARGB()
-	return 255,255,255,255
+end
+
+---返回颜色的4个分量，或者通过4个分量设置颜色，其中alpha取值为[[0~100]]
+---@overload fun():number, number, number, number
+---@overload fun(a:number, h:number, s:number, v:number)
+---@return number, number, number, number
+function color:AHSV()
+end
+
+---构造颜色对象
+---@overload fun(argb:number):lstg.Color
+---@overload fun(a:number, r:number, g:number, b:number):lstg.Color
+---@return lstg.Color
+function lstg.Color(a, r, g, b)
 end
 
 ----------------------------------------
 ---lstg.Random
 
 ---@class lstg.Rand @WELL512随机数发生器
-local random={}
+local random = {}
 
 ---设置随机数发生器的随机数种子
 ---@param seed number @随机数种子必须是整数
@@ -37,7 +69,7 @@ end
 ---@param n1 number @必须是整数
 ---@param n2 number @必须是整数
 ---@return number @整数
-function random:Int(n1,n2)
+function random:Int(n1, n2)
 	return 0
 end
 
@@ -45,21 +77,26 @@ end
 ---@param f1 number
 ---@param f2 number
 ---@return number
-function random:Float(f1,f2)
+function random:Float(f1, f2)
 	return 0.0
 end
 
----随机地获得正负号，即-1或1
+---随机获得符号，-1、0、1
 ---@return number
 function random:Sign()
 	return 1
+end
+
+---构造随机数发生器对象
+---@return lstg.Rand
+function lstg.Rand()
 end
 
 ----------------------------------------
 ---lstg.StopWatch
 
 ---@class lstg.StopWatch @毫秒级高精度计时器
-local stopwatch={}
+local stopwatch = {}
 
 ---重置计时器所有状态
 function stopwatch:Reset()
@@ -73,16 +110,21 @@ end
 function stopwatch:Resume()
 end
 
----获取流逝的时间
+---获取流逝的时间，暂停状态下需要先恢复才能正确获取时间
 ---@return number @以秒为单位的时间长度
 function stopwatch:GetElapsed()
+end
+
+---构造高精度微秒级计时器
+---@return lstg.StopWatch
+function lstg.StopWatch()
 end
 
 ----------------------------------------
 ---lstg.BentLaser
 
 ---@class lstg.BentLaser @曲线激光
-local bentlaser={}
+local bentlaser = {}
 
 ---更新曲线激光的节点
 ---@param unit lstg.GameObject
@@ -157,14 +199,14 @@ end
 ---@param length number
 ---@return table[] @带有x、y、rot成员的table
 function bentlaser:SampleByLength(length)
-	return {{x=0,y=0,rot=0},}
+	return { { x = 0, y = 0, rot = 0 }, }
 end
 
 ---对曲线激光进行等长时间采样（单位为帧），返回采样数据
 ---@param time number @整数
 ---@return table[] @带有x、y、rot成员的table
 function bentlaser:SampleByTime(time)
-	return {{x=0,y=0,rot=0},}
+	return { { x = 0, y = 0, rot = 0 }, }
 end
 
 ---根据一个对象表更新曲线激光的位置
@@ -179,4 +221,9 @@ end
 ---更改曲线激光的宽度
 ---@param width number @宽度，不是半宽
 function bentlaser:SetAllWidth(width)
+end
+
+---构造曲线激光对象
+---@return lstg.BentLaser
+function lstg.BentLaserData()
 end

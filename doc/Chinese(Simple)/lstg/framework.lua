@@ -30,7 +30,7 @@ end
 function m.SetResolution(width, height)
 end
 
----【该方法将被废弃，因为它带来了很多bug】
+---【即将废弃的方法，因为它带来了很多bug】
 ---初始化方法，仅在launch文件内生效，运行时调用该方法将会触发警告消息；
 ---游戏初始化时显示启动图，并持续到游戏初始化完成；
 ---游戏默认设置为毛玉图片；
@@ -82,6 +82,13 @@ function m.SetTitle(windowtitle)
 end
 
 ---输出一条log信息
+---@param level number @1, 2, 3, 4, 5, 分别代表 debug, info, warning, error, fatal
+---@param msg string
+function m.Log(level, msg)
+end
+
+---【即将废弃的方法】
+---输出一条log信息
 ---@param msg string
 function m.SystemLog(msg)
 end
@@ -124,7 +131,10 @@ end
 
 ---枚举指定目录下的文件，返回类似以下结构的table，第二项不为空时表示该文件在压缩包内
 ---```lua
----{{"sample.file", nil},{"sample.file", "sample.zip"},}
+---1 | {
+---2 |     {"sample.file", nil},
+---3 |     {"sample.file", "sample.zip"},
+---4 | }
 ---```
 ---@param searchpath string
 ---@param extendname string|nil @可选的文件拓展名，可以匹配拓展名，排除其他文件
