@@ -5,13 +5,18 @@
 ---邮箱:Xiliusha@outlook.com
 ---=====================================
 
----@class lstg.FileManager @文件管理类
+---[不稳定的实现，建议直接使用LoadPack、UnloadPack等稳定的API]
+---@class lstg.FileManager
 local m={}
+
+---@type lstg.FileManager
+lstg.FileManager = m
 
 ----------------------------------------
 ---压缩包方法
 
----@class lstg.Archive @压缩包对象
+---[不稳定的实现，日后可能会变更] 压缩包对象
+---@class lstg.Archive
 local c = {}
 
 ---判断压缩包是否还有效，可能压缩包本身已经被卸载但是引用还在
@@ -132,8 +137,3 @@ end
 function m.EnumFilesEx(searchpath, extend)
     return {{"sample.ext",false, nil}, {"sampledir/",true, "sample.zip"}}
 end
-
-----------------------------------------
----导出
-
-return m

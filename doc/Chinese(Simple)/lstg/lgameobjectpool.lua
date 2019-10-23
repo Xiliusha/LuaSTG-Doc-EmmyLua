@@ -1,9 +1,11 @@
 ---=====================================
 ---对象池方法
+---作者:Xiliusha
+---邮箱:Xiliusha@outlook.com
 ---=====================================
 
 ---@type lstg
-local m=lstg
+local m = lstg
 
 ----------------------------------------
 ---游戏对象池
@@ -38,7 +40,7 @@ end
 ---@param right number
 ---@param bottom number
 ---@param top number
-function m.SetBound(left,right,bottom,top)
+function m.SetBound(left, right, bottom, top)
 end
 
 ---【禁止在协同程序中调用此方法】
@@ -65,13 +67,13 @@ end
 ---@param class lstg.Class
 ---@vararg any
 ---@return lstg.GameObject
-function m.New(class, ...  )
+function m.New(class, ...)
 	---@type lstg.GameObject
-	local ret={}
+	local ret = {}
 	return ret
 end
 
----重置指定游戏对象的各项属性为默认值，不重置id, uuid（不可见）, class（class信息会被清除）
+---重置指定游戏对象的各项属性为默认值，不重置id、uuid(不可见)、class(class信息会被清除)
 ---@param unit lstg.GameObject
 function m.ResetObject(unit)
 end
@@ -79,13 +81,13 @@ end
 ---触发指定游戏对象的del回调函数，并将该对象标记为del状态，剩余参数将传递给del回调函数
 ---@param unit lstg.GameObject
 ---@vararg any
-function m.Del(unit, ...  )
+function m.Del(unit, ...)
 end
 
 ---触发指定游戏对象的kill回调函数，并将该对象标记为kill状态，剩余参数将传递给kill回调函数
 ---@param unit lstg.GameObject
 ---@vararg any
-function m.Kill(unit, ...  )
+function m.Kill(unit, ...)
 end
 
 ---检查指定游戏对象的引用是否有效，如果返回假，则该对象已经被对象池回收或不是 有效的lstg.GameObject对象；
@@ -108,7 +110,7 @@ end
 ---@param x2 lstg.GameObject|number|nil
 ---@param y2 number|nil
 ---@return number
-function m.Angle(x1,y1,x2,y2)
+function m.Angle(x1, y1, x2, y2)
 	return 0
 end
 
@@ -124,7 +126,7 @@ end
 ---@param x2 lstg.GameObject|number|nil
 ---@param y2 number|nil
 ---@return number
-function m.Dist(x1,y1,x2,y2)
+function m.Dist(x1, y1, x2, y2)
 	return 0
 end
 
@@ -187,7 +189,7 @@ end
 ---@param k number|string
 ---@param v any
 function m.SetAttr(t, k, v)
-	t[k]=v
+	t[k] = v
 end
 
 ---获取游戏对象上某些属性的值
@@ -243,6 +245,7 @@ end
 ----------------------------------------
 ---游戏对象池更新暂停
 
+--[[
 ---设置游戏对象池下一帧开始暂停更新的时间（帧）
 ---@param t number
 function m.SetSuperPause(t)
@@ -261,10 +264,12 @@ end
 ---获取当前帧游戏对象池暂停更新的时间（帧）
 function m.GetCurrentSuperPause()
 end
+--]]
 
 ----------------------------------------
 ---游戏对象world掩码
 
+--[==[
 ---获取当前激活的world掩码
 function m.GetWorldFlag()
 	return 1
@@ -296,5 +301,5 @@ end
 ---@param unitB lstg.GameObject
 ---@return boolean
 function m.CheckWorlds(unitA, unitB)
-	return true
 end
+--]==]
