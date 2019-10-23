@@ -129,10 +129,10 @@ local game_object = {
 	hscale = 1,
 	---图片精灵纵向缩放
 	vscale = 1,
-	---赋值为nil时将会释放绑定在对象上的资源
+	---可应用图片精灵资源、动画资源、HGE粒子资源，赋值为nil时将会释放绑定在对象上的资源
 	img = "unkown",
 	--========collision========
-	---碰撞组
+	---碰撞组id，取值范围 0 到 15
 	group = 0,
 	---是否出界自动删除，参考lstg.SetBound
 	bound = true,
