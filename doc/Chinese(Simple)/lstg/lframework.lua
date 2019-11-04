@@ -80,19 +80,18 @@ end
 function m.SetTitle(windowtitle)
 end
 
+--[[
 ---输出一条log信息
 ---@param level number @1, 2, 3, 4, 5, 分别代表 debug, info, warning, error, fatal 共5个级别
 ---@param msg string
 function m.Log(level, msg)
 end
+--]]
 
---[[
----[即将废弃的方法]
 ---输出一条log信息
 ---@param msg string
 function m.SystemLog(msg)
 end
---]]
 
 ---相当于print，输出的内容保存在引擎的log.txt中，以info级别输出日志
 ---@vararg string
@@ -116,7 +115,6 @@ end
 ---@param dest string @目标文件路径
 function m.ExtractRes(src, dest)
 end
---]]
 
 ---从指定文本文件读取所有文本内容
 ---@param path string
@@ -130,7 +128,6 @@ end
 function m.EnumResolutions()
 end
 
---[[
 ---[即将废弃的方法]
 ---枚举指定目录下的文件，返回类似以下结构的table，第二项不为空时表示该文件在压缩包内
 ---```lua

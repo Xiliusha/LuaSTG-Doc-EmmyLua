@@ -14,8 +14,7 @@ local bentlaser = {}
 ---@param unit lstg.GameObject
 ---@param length number @曲线激光的长度（最大节点数量），整数，不能小于1，且曲线激光最大节点数量为512
 ---@param width number @宽度，不是半宽
----@param active boolean @该节点是否是激活的
-function bentlaser:Update(unit, length, width, active)
+function bentlaser:Update(unit, length, width)
 end
 
 --[[
@@ -56,12 +55,12 @@ end
 function bentlaser:CollisionCheck(x, y, rot, a, b, rect)
 end
 
+--[[
 ---渲染曲线激光的碰撞体
 ---@param color lstg.Color
 function bentlaser:RenderCollider(color)
 end
 
---[[
 ---将曲线激光与给定的数据进行碰撞检测，曲线激光的宽度将被替换成参数width
 ---@param x number
 ---@param y number
@@ -104,12 +103,12 @@ end
 ---@param revert boolean @反向索引
 function bentlaser:UpdatePositionByList(units, length, width, index, revert)
 end
---]==]
 
 ---更改曲线激光的宽度
 ---@param width number @宽度，不是半宽
 function bentlaser:SetAllWidth(width)
 end
+--]==]
 
 ---构造曲线激光对象
 ---@return lstg.BentLaser

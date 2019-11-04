@@ -168,9 +168,11 @@ end
 function m.SetImageScale(scale)
 end
 
+--[[
 ---@return number
 function m.GetImageScale()
 end
+--]]
 
 ---更改图片精灵渲染时使用的混合模式和顶点颜色，
 ---如果提供4个颜色参数，则对图片精灵的4个顶点分别设置颜色
@@ -213,9 +215,11 @@ end
 function m.SetAnimationCenter(aniname, x, y)
 end
 
+--[[
 ---预加载指定字符串内的所有字符的字形，
 ---如果字形缓存槽被耗尽，则部分字符的字形缓存将会被覆盖
 ---@param ttfname string
 ---@param cachestring string
 function m.CacheTTFString(ttfname, cachestring)
 end
+--]]
