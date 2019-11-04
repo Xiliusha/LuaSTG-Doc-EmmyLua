@@ -95,6 +95,7 @@ end
 ---@param fntname string
 ---@param filepath string
 ---@param mipmap boolean @若不提供该参数，则默认为true
+---@overload fun(fntname:string, filepath:string)
 ---@overload fun(fntname:string, filepath:string, texfile:string, mipmap:boolean)
 function m.LoadFont(fntname, filepath, mipmap)
 end
@@ -102,7 +103,7 @@ end
 ---从文件加载truetype字体
 ---@param ttfname string
 ---@param filepath string
----@param width number @宽度(像素)
+---@param width number @宽度(像素)，建议填0
 ---@param height number @高度(像素)
 function m.LoadTTF(ttfname, filepath, width, height)
 end

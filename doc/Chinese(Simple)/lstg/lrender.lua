@@ -23,7 +23,9 @@ end
 
 ---@param near number
 ---@param far number
----@param color lstg.Color
+---@param color lstg.Color @default to lstg.Color(0xFF000000)
+---@overload fun()
+---@overload fun(near:number, far:number)
 function m.SetFog(near, far, color)
 end
 
@@ -94,6 +96,10 @@ end
 ---@param hscale number @default to 1.0
 ---@param vscale number @default to hscale
 ---@param z number @default to 0.5
+---@overload fun(imgname:string, x:number, y:number)
+---@overload fun(imgname:string, x:number, y:number, rot:number)
+---@overload fun(imgname:string, x:number, y:number, rot:number, hscale:number)
+---@overload fun(imgname:string, x:number, y:number, rot:number, hscale:number, vscale:number)
 function m.Render(imgname, x, y, rot, hscale, vscale, z)
 end
 
