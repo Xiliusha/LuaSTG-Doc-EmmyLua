@@ -150,10 +150,10 @@ end
 ---@param right number
 ---@param bottom number
 ---@param top number
----@param scale number
 ---@param align number
 ---@param color lstg.Color
-function m.RenderTTF(ttfname, text, left, right, bottom, top, scale, align, color)
+---@param scale number
+function m.RenderTTF(ttfname, text, left, right, bottom, top, align, color, scale)
 end
 
 ----------------------------------------
